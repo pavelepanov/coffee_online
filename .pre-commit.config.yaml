@@ -3,7 +3,6 @@ repos:
     hooks:
       id: lint
       name: Linter
-      stages: [pre-commit, pre-merge-commit, manual]
       entry: "scripts/lint.sh"
       language: python
       types: [python]

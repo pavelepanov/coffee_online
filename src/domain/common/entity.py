@@ -1,5 +1,6 @@
 from typing import TypeVar
 
+
 EntityId = TypeVar('EntityId')
 
 

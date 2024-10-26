@@ -1,5 +1,5 @@
-from src.domain.common.value_object import ValueObject
 from src.domain.common.errors import ValueObjectValidationError
+from src.domain.common.value_object import ValueObject
 
 
 class UserName(ValueObject):

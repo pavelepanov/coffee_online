@@ -3,18 +3,14 @@ repos:
     hooks:
       id: lint
       name: Linter
-      entry: "scripts/lint.sh"
+      entry: ruff check .
       language: python
       types: [python]
-      require_serial: true
-      verbose: true
 
   - repo: local
     hooks:
       - id: static-analysis
         name: Static analysis
-        entry: "scripts/static-analysis.sh"
+        entry: isort .
         language: python
         types: [python]
-        require_serial: true
-        verbose: true

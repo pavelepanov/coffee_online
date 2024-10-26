@@ -6,6 +6,10 @@ from src.domain.value_objects.user_email import UserEmail
 from src.domain.value_objects.user_hashed_password import UserHashedPassword
 
 
+
+
+
+
 class User(Entity):
     def __init__(self, id: UserId, name: UserName, sex: UserSex, email: UserEmail, hashed_password: UserHashedPassword) -> None:
         super().__init__(id=id)

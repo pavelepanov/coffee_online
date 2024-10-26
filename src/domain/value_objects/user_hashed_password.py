@@ -8,7 +8,7 @@ class UserHashedPassword(ValueObject):
 
     def _validate(self) -> None:
         if not isinstance(self.__hashed_password, str):
-            raise ValueObjectValidationError('User password must be a str')
+            raise ValueObjectValidationError("User password must be a str")
         if len(self.__hashed_password) > 1024:
             raise ValueObjectValidationError(
                 "Hashed password must be less then 1024 symbols"

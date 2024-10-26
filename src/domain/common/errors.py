@@ -13,5 +13,4 @@ class DomainError(Exception):
             self.message = message
 
 
-class ValueObjectValidationError(DomainError):
-    ...
+class ValueObjectValidationError(DomainError): ...

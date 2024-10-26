@@ -12,7 +12,7 @@ class UserEmail(ValueObject):
         email_pattern = r"^[\w\.-]+@[a-zA-Z\d\.-]+\.[a-zA-Z]{2,}$"
 
         if not isinstance(self.__email, str):
-            raise ValueObjectValidationError('User email must be a str')
+            raise ValueObjectValidationError("User email must be a str")
 
         if not isinstance(self.__email, str):
             raise ValueObjectValidationError("User email must be an str")

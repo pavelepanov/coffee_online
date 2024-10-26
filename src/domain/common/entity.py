@@ -1,7 +1,6 @@
 from typing import TypeVar
 
-
-EntityId = TypeVar('EntityId')
+EntityId = TypeVar("EntityId")
 
 
 class Entity:

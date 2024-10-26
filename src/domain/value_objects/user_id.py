@@ -8,7 +8,7 @@ class UserId(ValueObject):
 
     def _validate(self) -> None:
         if not isinstance(self.__id, int):
-            raise ValueObjectValidationError('User id must be an int')
+            raise ValueObjectValidationError("User id must be an int")
 
     @property
     def id(self):

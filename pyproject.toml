@@ -11,7 +11,6 @@ dependencies = [
 [dependency-groups]
 dev = [
     "isort>=5.13.2",
-    "mypy>=1.13.0",
     "ruff>=0.7.1",
 ]
 
@@ -35,14 +34,3 @@ warn_unused_ignores = true
 disallow_incomplete_defs = true
 disallow_untyped_decorators = true
 disallow_any_unimported = false
-
-
-[tool.ruff]
-fix = true
-line-length = 88
-src = ["src"]
-
-[tool.isort]
-line_length = 88
-lines_after_imports = 2
-skip = ["__init__.py", ]

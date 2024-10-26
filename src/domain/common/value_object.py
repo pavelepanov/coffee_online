@@ -14,5 +14,4 @@ class ValueObject(ABC):
         return hash(tuple(sorted(self.__dict__.items())))
 
     @abstractmethod
-    def _validate(self) -> None:
-        ...
+    def _validate(self) -> None: ...

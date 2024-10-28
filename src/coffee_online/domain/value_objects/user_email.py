@@ -1,7 +1,7 @@
 from re import match
 
-from src.domain.common.errors import ValueObjectValidationError
-from src.domain.common.value_object import ValueObject
+from coffee_online.domain.common.errors import ValueObjectValidationError
+from coffee_online.domain.common.value_object import ValueObject
 
 
 class UserEmail(ValueObject):
@@ -21,7 +21,9 @@ class UserEmail(ValueObject):
                 "Invalid email format. User email must be in the format 'example@example.com'."
             )
         if len(self.__email) > 320:
-            raise ValueObjectValidationError("User email must be less than 320 symbols")
+            raise ValueObjectValidationError(
+                "User email must be less than 320 symbols"
+            )
 
     @property
     def email(self):

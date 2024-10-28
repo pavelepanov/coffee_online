@@ -1,5 +1,5 @@
-from src.domain.common.errors import ValueObjectValidationError
-from src.domain.common.value_object import ValueObject
+from coffee_online.domain.common.errors import ValueObjectValidationError
+from coffee_online.domain.common.value_object import ValueObject
 
 
 class UserHashedPassword(ValueObject):
@@ -15,5 +15,5 @@ class UserHashedPassword(ValueObject):
             )
 
     @property
-    def password(self):
-        return self.__password
+    def hashed_password(self):
+        return self.__hashed_password

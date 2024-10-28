@@ -1,7 +1,7 @@
 from typing import Protocol
 
-from src.domain.entities.user import User
-from src.domain.value_objects.user_id import UserId
+from coffee_online.domain.entities.user import User
+from coffee_online.domain.value_objects.user_id import UserId
 
 
 class UserRepository(Protocol):

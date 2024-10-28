@@ -23,14 +23,7 @@ repos:
 
       - id: ruff_c
         name: Ruff check
-        entry: ruff check --fix .
-        language: system
-        types: [ python ]
-        pass_filenames: false
-
-      - id: ruff_f
-        name: Ruff format
-        entry: ruff format
+        entry: ruff check --fix
         language: system
         types: [ python ]
         pass_filenames: false

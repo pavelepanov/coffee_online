@@ -1,9 +1,10 @@
-from src.domain.common.entity import Entity
-from src.domain.value_objects.user_email import UserEmail
-from src.domain.value_objects.user_hashed_password import UserHashedPassword
-from src.domain.value_objects.user_id import UserId
-from src.domain.value_objects.user_name import UserName
-from src.domain.value_objects.user_sex import UserSex
+from coffee_online.domain.common.entity import Entity
+from coffee_online.domain.value_objects.user_email import UserEmail
+from coffee_online.domain.value_objects.user_hashed_password import \
+    UserHashedPassword
+from coffee_online.domain.value_objects.user_id import UserId
+from coffee_online.domain.value_objects.user_name import UserName
+from coffee_online.domain.value_objects.user_sex import UserSex
 
 
 class User(Entity):

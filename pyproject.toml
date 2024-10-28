@@ -5,7 +5,17 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
+    "alembic>=1.13.3",
+    "async-sqlalchemy>=1.0.0",
+    "asyncpg>=0.30.0",
+    "dishka>=1.4.0",
+    "fastapi-users[sqlalchemy]>=13.0.0",
+    "fastapi[standard]>=0.115.3",
+    "greenlet>=3.1.1",
+    "gunicorn>=23.0.0",
     "pre-commit>=4.0.1",
+    "python-dotenv>=1.0.1",
+    "sqlalchemy>=2.0.36",
 ]
 
 [dependency-groups]
@@ -34,3 +44,8 @@ warn_unused_ignores = true
 disallow_incomplete_defs = true
 disallow_untyped_decorators = true
 disallow_any_unimported = false
+
+
+[tool.ruff]
+line-length = 79
+src = ["src"]

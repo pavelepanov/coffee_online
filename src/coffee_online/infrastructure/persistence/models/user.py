@@ -1,6 +1,8 @@
+from typing import TYPE_CHECKING
+
 from fastapi_users.db import SQLAlchemyBaseUserTable
 from sqlalchemy import Boolean, String
-from sqlalchemy.orm import Mapped, mapped_column
+from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from coffee_online.infrastructure.persistence.models.base import BaseDb
 from coffee_online.infrastructure.persistence.models.types.created_at import \
@@ -8,6 +10,10 @@ from coffee_online.infrastructure.persistence.models.types.created_at import \
 from coffee_online.infrastructure.persistence.models.types.int_pk import intpk
 from coffee_online.infrastructure.persistence.models.types.updated_at import \
     updated_at
+
+if TYPE_CHECKING:
+    from coffee_online.infrastructure.persistence.models.profile import \
+        ProfileDb
 
 
 class UserDb(SQLAlchemyBaseUserTable[int], BaseDb):
@@ -29,3 +35,5 @@ class UserDb(SQLAlchemyBaseUserTable[int], BaseDb):
     )
     created_at: Mapped[created_at]
     updated_at: Mapped[updated_at]
+
+    profile: Mapped["ProfileDb"] = relationship(back_populates="user")

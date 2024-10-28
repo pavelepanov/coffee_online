@@ -14,8 +14,6 @@ class UserDb(SQLAlchemyBaseUserTable[int], BaseDb):
     __tablename__ = "user"
 
     id: Mapped[intpk]
-    name: Mapped[str] = mapped_column(String, nullable=False)
-    sex: Mapped[str] = mapped_column(String, nullable=False)
     email: Mapped[str] = mapped_column(
         String, unique=True, index=True, nullable=False
     )

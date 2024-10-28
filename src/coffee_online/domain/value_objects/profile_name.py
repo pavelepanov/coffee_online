@@ -2,7 +2,7 @@ from coffee_online.domain.common.errors import ValueObjectValidationError
 from coffee_online.domain.common.value_object import ValueObject
 
 
-class UserName(ValueObject):
+class ProfileName(ValueObject):
     def __init__(self, name: str):
         self.__name = name
 
@@ -44,17 +44,17 @@ class UserName(ValueObject):
         )
 
         if not isinstance(self.__name, str):
-            raise ValueObjectValidationError('Name must be str"')
+            raise ValueObjectValidationError('Profile name must be str"')
         if len(self.__name) > 50:
             raise ValueObjectValidationError(
-                "User name must be less than 50 letters"
+                "Profile name must be less than 50 letters"
             )
         if len(self.__name) <= 0:
             raise ValueObjectValidationError(
-                "User name must be greater than 0 letters"
+                "Profile name must be greater than 0 letters"
             )
         if not set(self.__name.lower()).issubset(ru_letters):
-            raise ValueObjectValidationError("User name must be russian")
+            raise ValueObjectValidationError("Profile name must be russian")
 
     @property
     def name(self):

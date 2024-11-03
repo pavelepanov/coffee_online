@@ -1,3 +1,5 @@
+import logging
+
 from coffee_online.application.contracts.profiles.requests import \
     CreateProfileRequest
 from coffee_online.application.contracts.profiles.responses import \
@@ -8,12 +10,15 @@ from coffee_online.domain.value_objects.profile_name import ProfileName
 from coffee_online.domain.value_objects.profile_sex import ProfileSex
 from coffee_online.domain.value_objects.user_id import UserId
 
+logger = logging.getLogger(__name__)
+
 
 class CreateProfile(Interactor[CreateProfileRequest, ProfileResponse]):
     def __init__(self, profile_repository: ProfileRepository) -> None:
         self.profile_repository = profile_repository
 
     async def __call__(self, request: CreateProfileRequest) -> ProfileResponse:
+        logger.info('Создаем профиль...')
         profile = await self.profile_repository.create(
             name=ProfileName(request.name),
             sex=ProfileSex(request.sex),

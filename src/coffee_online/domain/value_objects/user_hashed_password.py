@@ -5,6 +5,7 @@ from coffee_online.domain.common.value_object import ValueObject
 class UserHashedPassword(ValueObject):
     def __init__(self, hashed_password: str):
         self.__hashed_password = hashed_password
+        self._validate()
 
     def _validate(self) -> None:
         if not isinstance(self.__hashed_password, str):

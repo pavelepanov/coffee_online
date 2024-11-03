@@ -6,6 +6,8 @@ from coffee_online.infrastructure.auth.manager import (auth_backend,
 from coffee_online.infrastructure.di.main import container_factory
 from coffee_online.presentation.web_api.exc_handlers import \
     init_exception_handlers
+from coffee_online.presentation.web_api.routers.profile_router import \
+    profile_router
 from coffee_online.presentation.web_api.routers.user_router import user_router
 from coffee_online.presentation.web_api.schemas.auth import (UserCreate,
                                                              UserRead)
@@ -28,6 +30,7 @@ def init_routers(app: FastAPI) -> None:
     )
 
     app.include_router(user_router)
+    app.include_router(profile_router)
 
 
 def create_app() -> FastAPI:

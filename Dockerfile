@@ -10,5 +10,4 @@ COPY . /coffee_online
 
 # Install the application dependencies.
 WORKDIR /coffee_online
-RUN uv pip sync 'requirements.txt' --system
-RUN uv pip install -e .
+RUN uv pip install -r 'requirements.txt' --system

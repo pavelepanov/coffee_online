@@ -12,5 +12,8 @@ class DomainError(Exception):
         else:
             self.message = message
 
+    def __str__(self):
+        return self.message
+
 
 class ValueObjectValidationError(DomainError): ...

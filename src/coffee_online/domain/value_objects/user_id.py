@@ -5,6 +5,7 @@ from coffee_online.domain.common.value_object import ValueObject
 class UserId(ValueObject):
     def __init__(self, id: int):
         self.__id = id
+        self._validate()
 
     def _validate(self) -> None:
         if not isinstance(self.__id, int):

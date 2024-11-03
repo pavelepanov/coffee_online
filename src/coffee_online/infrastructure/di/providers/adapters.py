@@ -7,12 +7,15 @@ from fastapi_users.db import SQLAlchemyUserDatabase
 from sqlalchemy.ext.asyncio import (AsyncEngine, AsyncSession,
                                     async_sessionmaker, create_async_engine)
 
+from coffee_online.domain.repositories.profile import ProfileRepository
 from coffee_online.domain.repositories.user import UserRepository
 from coffee_online.infrastructure.auth.manager import UserManager
 from coffee_online.infrastructure.config import (DatabaseConfig,
                                                  SecretJwtConfig,
                                                  SecretManagerConfig)
 from coffee_online.infrastructure.persistence.models.user import UserDb
+from coffee_online.infrastructure.persistence.repositories.profiles import \
+    SqlalchemyProfileRepository
 from coffee_online.infrastructure.persistence.repositories.users import \
     SqlalchemyUserRepository
 
@@ -59,6 +62,12 @@ class SqlalchemyProvider(Provider):
         SqlalchemyUserRepository,
         scope=Scope.REQUEST,
         provides=UserRepository,
+    )
+
+    profile_repository = provide(
+        SqlalchemyProfileRepository,
+        scope=Scope.REQUEST,
+        provides=ProfileRepository,
     )
 
 

@@ -5,6 +5,7 @@ from coffee_online.domain.common.value_object import ValueObject
 class ProfileName(ValueObject):
     def __init__(self, name: str):
         self.__name = name
+        self._validate()
 
     def _validate(self) -> None:
         ru_letters = (

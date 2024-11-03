@@ -20,8 +20,8 @@ def profile_factory(
     user_id: int,
 ) -> Profile:
     return Profile(
-        id=ProfileId(id),
-        name=ProfileName(name),
-        sex=ProfileSex(sex),
-        user_id=UserId(user_id),
+        id=ProfileId(id=id),
+        name=ProfileName(name=name),
+        sex=ProfileSex(sex=sex),
+        user_id=UserId(id=user_id),
     )

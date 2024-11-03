@@ -12,5 +12,3 @@ wheels/
 .idea
 
 .ruff_cache
-
-*.egg-info

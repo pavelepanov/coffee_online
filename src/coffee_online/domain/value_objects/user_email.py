@@ -7,6 +7,7 @@ from coffee_online.domain.common.value_object import ValueObject
 class UserEmail(ValueObject):
     def __init__(self, email: str):
         self.__email = email
+        self._validate()
 
     def _validate(self) -> None:
         email_pattern = r"^[\w\.-]+@[a-zA-Z\d\.-]+\.[a-zA-Z]{2,}$"

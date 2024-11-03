@@ -12,5 +12,5 @@ COPY src /coffee_online/src
 COPY scripts /coffee_online/scripts
 COPY alembic.ini /coffee_online
 
-RUN --mount=from=ghcr.io/astral-sh/uv,source=/uv,target=/bin/uv \
+RUN --mount=type=cache,target=/root/.cache/pip \
     uv pip install -e . --system

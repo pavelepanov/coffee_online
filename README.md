@@ -19,11 +19,12 @@ SECRET_JWT=FDSJFSKJ!3@!sfhu4823482hfjsdfjksd!FDGfdsf432!83128*&*13fdsg
 SECRET_MANAGER=fdgkgi!i45$@tiGFGBXdsagfdg3$@
 ````
 2. Build docker in /example_dishka_fastapiusers/
+\
 ``docker compose up --build``
 3. Check docs in ``localhost:8000/docs``
 
 ## Logging
-Logs will be in docker container in /coffee_online/ in logs.log
+Logs will be in docker container in /coffee_online/logs.log
 
 ### How create logs?
 

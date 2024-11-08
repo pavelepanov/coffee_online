@@ -1,3 +1,4 @@
+
 from coffee_online.domain.common.entity import Entity
 from coffee_online.domain.value_objects.profile_id import ProfileId
 from coffee_online.domain.value_objects.profile_name import ProfileName
@@ -20,8 +21,8 @@ def profile_factory(
     user_id: int,
 ) -> Profile:
     return Profile(
-        id=ProfileId(id=id),
-        name=ProfileName(name=name),
-        sex=ProfileSex(sex=sex),
-        user_id=UserId(id=user_id),
-    )
+            id=ProfileId(id=id),
+            name=ProfileName(name=name),
+            sex=ProfileSex(sex=sex),
+            user_id=UserId(id=user_id),
+        )

@@ -1,3 +1,4 @@
+
 from dishka import FromDishka
 from dishka.integrations.fastapi import DishkaRoute
 from fastapi import APIRouter
@@ -20,9 +21,9 @@ async def create_profile(
     schema: ProfileCreateSchema, interactor: FromDishka[CreateProfile]
 ) -> ProfileResponse:
     return await interactor(
-        CreateProfileRequest(
-            name=schema.name,
-            sex=schema.sex,
-            user_id=schema.user_id,
+            CreateProfileRequest(
+                name=schema.name,
+                sex=schema.sex,
+                user_id=schema.user_id,
+            )
         )
-    )

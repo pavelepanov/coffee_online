@@ -1,3 +1,5 @@
+import logging
+
 from sqlalchemy import insert
 from sqlalchemy.ext.asyncio import AsyncSession
 
@@ -8,6 +10,7 @@ from coffee_online.domain.value_objects.profile_sex import ProfileSex
 from coffee_online.domain.value_objects.user_id import UserId
 from coffee_online.infrastructure.persistence.models.profile import ProfileDb
 
+logger = logging.getLogger(__name__)
 
 class SqlalchemyProfileRepository(ProfileRepository):
     def __init__(self, session: AsyncSession) -> None:
@@ -34,8 +37,13 @@ class SqlalchemyProfileRepository(ProfileRepository):
         result = await self.session.execute(stmt)
         await self.session.commit()
 
+        logging.info('Commit Profile')
+
+
         profile = result.mappings().first()
 
+
+        logging.info('Get Profile after commit')
         return profile_factory(
             id=profile.id,
             name=profile.name,

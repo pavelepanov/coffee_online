@@ -1,3 +1,4 @@
+import logging
 
 from coffee_online.domain.common.entity import Entity
 from coffee_online.domain.value_objects.profile_id import ProfileId
@@ -5,6 +6,7 @@ from coffee_online.domain.value_objects.profile_name import ProfileName
 from coffee_online.domain.value_objects.profile_sex import ProfileSex
 from coffee_online.domain.value_objects.user_id import UserId
 
+logger = logging.getLogger(__name__)
 
 class Profile(Entity):
     def __init__(self, id: ProfileId, name: ProfileName, sex: ProfileSex, user_id: UserId) -> None:
@@ -21,8 +23,8 @@ def profile_factory(
     user_id: int,
 ) -> Profile:
     return Profile(
-            id=ProfileId(id=id),
-            name=ProfileName(name=name),
-            sex=ProfileSex(sex=sex),
-            user_id=UserId(id=user_id),
-        )
+                id=ProfileId(id=id),
+                name=ProfileName(name=name),
+                sex=ProfileSex(sex=sex),
+                user_id=UserId(id=user_id),
+            )

@@ -1,4 +1,5 @@
-from logging import DEBUG, FileHandler, StreamHandler, basicConfig
+from logging import (DEBUG, FileHandler, StreamHandler, basicConfig, getLogger,
+                     info)
 
 from dishka.integrations.fastapi import FromDishka, setup_dishka
 from fastapi import FastAPI
@@ -13,6 +14,8 @@ from coffee_online.presentation.web_api.routers.profile_router import \
 from coffee_online.presentation.web_api.routers.user_router import user_router
 from coffee_online.presentation.web_api.schemas.auth import (UserCreate,
                                                              UserRead)
+
+logger = getLogger(__name__)
 
 
 def configure_logging(level=DEBUG):
@@ -60,5 +63,7 @@ def create_app() -> FastAPI:
     init_di(app)
     init_routers(app)
     init_exception_handlers(app)
+
+    info('Create application')
 
     return app

@@ -5,6 +5,7 @@ from coffee_online.domain.common.value_object import ValueObject
 
 logger = logging.getLogger(__name__)
 
+
 class ProfileId(ValueObject):
     def __init__(self, id: int):
         self.__id = id

@@ -1,9 +1,13 @@
+import logging
+
 from coffee_online.application.contracts.users.requests import \
     GetUserByIdRequest
 from coffee_online.application.contracts.users.responses import UserResponse
 from coffee_online.application.protocols.interactor import Interactor
 from coffee_online.domain.repositories.user import UserRepository
 from coffee_online.domain.value_objects.user_id import UserId
+
+logger = logging.getLogger(__name__)
 
 
 class GetUserById(Interactor[GetUserByIdRequest, UserResponse]):
@@ -12,6 +16,8 @@ class GetUserById(Interactor[GetUserByIdRequest, UserResponse]):
 
     async def __call__(self, request: GetUserByIdRequest) -> UserResponse:
         user = await self.user_repository.get_by_id(user_id=UserId(request.id))
+
+        logging.info('Get user by id')
 
         return UserResponse(
             id=user.id.id,

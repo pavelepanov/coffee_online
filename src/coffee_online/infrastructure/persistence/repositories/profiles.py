@@ -39,11 +39,9 @@ class SqlalchemyProfileRepository(ProfileRepository):
 
         logging.info('Commit Profile')
 
-
         profile = result.mappings().first()
 
-
-        logging.info('Get Profile after commit')
+        logging.info('Return Profile after commit')
         return profile_factory(
             id=profile.id,
             name=profile.name,

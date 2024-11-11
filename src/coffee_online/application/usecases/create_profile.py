@@ -12,6 +12,7 @@ from coffee_online.domain.value_objects.user_id import UserId
 
 logger = logging.getLogger(__name__)
 
+
 class CreateProfile(Interactor[CreateProfileRequest, ProfileResponse]):
     def __init__(self, profile_repository: ProfileRepository) -> None:
         self.profile_repository = profile_repository
@@ -23,7 +24,7 @@ class CreateProfile(Interactor[CreateProfileRequest, ProfileResponse]):
                 user_id=UserId(request.user_id),
             )
 
-        logging.info('Create Profile')
+        logging.info("Create Profile")
         return ProfileResponse(
                 id=profile.id.id,
                 name=profile.name.name,

@@ -6,22 +6,18 @@ from coffee_online.domain.common.value_object import ValueObject
 logger = logging.getLogger(__name__)
 
 
-class AddressId(ValueObject):
-    def __init__(self, time: int):
-        self.__time = time
+class CoffeeId(ValueObject):
+    def __init__(self, id: int):
+        self.__id = id
         self._validate()
 
     def _validate(self) -> None:
-        times = [5, 10, 15, 30]
-
         try:
-            if not isinstance(self.__time, int):
-                raise ValueObjectValidationError("Time must be an int")
-            if self.__time not in times:
-                raise ValueObjectValidationError("Time must be in [5, 10, 15, 30] minutes")
+            if not isinstance(self.__id, int):
+                raise ValueObjectValidationError("Coffee id must be an int")
         except Exception as e:
-            logging.exception("Time did not create because %s" % e)
+            logging.exception("Coffee id did not create because %s" % e)
 
     @property
-    def time(self):
-        return self.__time
+    def id(self):
+        return self.__id

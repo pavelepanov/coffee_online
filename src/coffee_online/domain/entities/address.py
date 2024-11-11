@@ -9,7 +9,7 @@ class Address(Entity):
         self.title = title
 
 
-def address_factory(id: int, title: str) -> Address:
+def coffee_factory(id: int, title: str) -> Address:
     return Address(
         id=AddressId(id),
         title=AddressTitle(title),
